@@ -1,12 +1,15 @@
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        vector<int> res;
-        for(int i=1;i<=nums.size();i++){
-            if(!binary_search(nums.begin(),nums.end(),i))
-                res.push_back(i);
+        vector<int> ans;
+        for(int i=0;i<nums.size();i++){
+            while(nums[nums[i]-1]!=nums[i])
+                swap(nums[nums[i]-1],nums[i]);
         }
-        return res;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=i+1)
+                ans.push_back(i+1);
+        }
+        return ans;
     }
 };
