@@ -12,7 +12,7 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-         ListNode* ptr = head;
+        ListNode* ptr = head;
         for (int i = 0; i < k; ++i) {
             if (!ptr) return head; 
             ptr = ptr->next;
