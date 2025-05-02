@@ -14,7 +14,7 @@ public:
     ListNode* reverseKGroup(ListNode* head, int k) {
         ListNode* ptr = head;
         for (int i = 0; i < k; ++i) {
-            if (!ptr) return head; 
+            if (ptr==NULL) return head; 
             ptr = ptr->next;
         }
 
